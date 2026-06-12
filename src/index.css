@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+
+html,
+body {
+  background: #07080d;
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-in {
+  animation: float-in 0.45s cubic-bezier(0.21, 0.61, 0.35, 1) both;
+}
+
+@keyframes ring-draw {
+  from {
+    stroke-dashoffset: var(--ring-circ, 264);
+  }
+}
+
+.ring-anim {
+  animation: ring-draw 1s cubic-bezier(0.3, 0.7, 0.3, 1) both;
+}
+
+/* ---------------- accent theme overrides ---------------- */
+
+[data-accent="violet"] { --a300: #c4b5fd; --a400: #a78bfa; --a500: #8b5cf6; --a600: #7c3aed; --b600: #4f46e5; --b800: #3730a3; }
+[data-accent="sky"] { --a300: #7dd3fc; --a400: #38bdf8; --a500: #0ea5e9; --a600: #0284c7; --b600: #0369a1; --b800: #075985; }
+[data-accent="emerald"] { --a300: #6ee7b7; --a400: #34d399; --a500: #10b981; --a600: #059669; --b600: #047857; --b800: #065f46; }
+[data-accent="rose"] { --a300: #fda4af; --a400: #fb7185; --a500: #f43f5e; --a600: #e11d48; --b600: #be123c; --b800: #9f1239; }
+[data-accent="amber"] { --a300: #fcd34d; --a400: #fbbf24; --a500: #f59e0b; --a600: #d97706; --b600: #b45309; --b800: #92400e; }
+
+[data-accent] .bg-violet-500 { background-color: var(--a500); }
+[data-accent] .bg-violet-400 { background-color: var(--a400); }
+[data-accent] .bg-violet-400\/70 { background-color: color-mix(in srgb, var(--a400) 70%, transparent); }
+[data-accent] .bg-violet-500\/10 { background-color: color-mix(in srgb, var(--a500) 10%, transparent); }
+[data-accent] .bg-violet-500\/15 { background-color: color-mix(in srgb, var(--a500) 15%, transparent); }
+[data-accent] .bg-violet-500\/20 { background-color: color-mix(in srgb, var(--a500) 20%, transparent); }
+[data-accent] .bg-violet-500\/25 { background-color: color-mix(in srgb, var(--a500) 25%, transparent); }
+[data-accent] .bg-violet-600\/20 { background-color: color-mix(in srgb, var(--a600) 20%, transparent); }
+[data-accent] .text-violet-300 { color: var(--a300); }
+[data-accent] .text-violet-400 { color: var(--a400); }
+[data-accent] .border-violet-500\/20 { border-color: color-mix(in srgb, var(--a500) 20%, transparent); }
+[data-accent] .border-violet-500\/30 { border-color: color-mix(in srgb, var(--a500) 30%, transparent); }
+[data-accent] .border-violet-500\/40 { border-color: color-mix(in srgb, var(--a500) 40%, transparent); }
+[data-accent] .ring-violet-500 { --tw-ring-color: var(--a500); }
+[data-accent] .ring-violet-500\/40 { --tw-ring-color: color-mix(in srgb, var(--a500) 40%, transparent); }
+[data-accent] .ring-violet-500\/50 { --tw-ring-color: color-mix(in srgb, var(--a500) 50%, transparent); }
+[data-accent] .from-violet-500 { --tw-gradient-from: var(--a500); }
+[data-accent] .from-violet-600 { --tw-gradient-from: var(--a600); }
+[data-accent] .via-indigo-600 { --tw-gradient-via: var(--b600); }
+[data-accent] .to-indigo-600 { --tw-gradient-to: var(--b600); }
+[data-accent] .to-indigo-800 { --tw-gradient-to: var(--b800); }
+[data-accent] .shadow-violet-600\/25 { --tw-shadow-color: color-mix(in srgb, var(--a600) 25%, transparent); }
+[data-accent] .shadow-violet-600\/30 { --tw-shadow-color: color-mix(in srgb, var(--a600) 30%, transparent); }
+[data-accent] .shadow-violet-600\/40 { --tw-shadow-color: color-mix(in srgb, var(--a600) 40%, transparent); }
+[data-accent] .shadow-indigo-900\/40 { --tw-shadow-color: color-mix(in srgb, var(--b800) 40%, transparent); }
